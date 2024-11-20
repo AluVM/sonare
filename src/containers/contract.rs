@@ -30,18 +30,6 @@ use ultrasonic::{Codex, ContractId, Operation};
 
 use crate::LIB_NAME_SONARE;
 
-pub trait ProofOfPubl: Copy + Eq + StrictDumb + StrictEncode + StrictDecode + Debug + Display + Into<[u8; 4]> {}
-
-#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Display)]
-#[display("~")]
-#[derive(StrictType, StrictDumb, StrictEncode, StrictDecode)]
-#[strict_type(lib = LIB_NAME_SONARE)]
-pub struct Private(ReservedBytes<4, 0xFF>);
-impl From<Private> for [u8; 4] {
-    fn from(_: Private) -> Self { [0xFF; 4] }
-}
-impl ProofOfPubl for Private {}
-
 pub type ContractPrivate = Contract<Private>;
 
 #[derive(Clone, Eq, PartialEq, Ord, PartialOrd, Hash, Debug, Display)]

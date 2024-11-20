@@ -23,7 +23,7 @@
 
 use std::path::PathBuf;
 
-use sonare::util::ContractRef;
+use sonare::ContractRef;
 
 pub enum Command {
     /// Import kit

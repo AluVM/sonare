@@ -1,6 +1,6 @@
 [workspace]
-members = [".", "cli", "inmem", "request"]
-default-members = [".", "inmem", "request"]
+members = [".", "cli", "inmem"]
+default-members = [".", "inmem"]
 
 [workspace.package]
 version = "0.12.0-alpha.1"
@@ -19,6 +19,7 @@ strict_encoding = "~2.8.1"
 strict_types = "~2.8.1"
 aluvm = "0.12.0-beta.2"
 ultrasonic = "0.12.0-beta.1"
+sonic = "0.12.0-alpha.1"
 serde = { version = "1", features = ["derive"] }
 
 [package]
@@ -39,31 +40,11 @@ exclude = [".github"]
 [lib]
 name = "sonare"
 
-[[example]]
-name = "dao"
-
 [dependencies]
 amplify.workspace = true
-baid64 = "0.4.0"
-strict_encoding.workspace = true
-strict_types.workspace = true
-commit_verify = "0.12.0-alpha.3"
-aluvm.workspace = true
 ultrasonic.workspace = true
+sonic.workspace = true
 serde = { workspace = true, optional = true }
-
-[features]
-default = []
-all = ["stl", "serde"]
-
-stl = ["commit_verify/stl", "ultrasonic/stl", "strict_types/armor"]
-serde = [
-    "dep:serde",
-    "amplify/serde",
-    "strict_encoding/serde",
-    "commit_verify/serde",
-    "ultrasonic/serde"
-]
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen = "0.2"
@@ -78,4 +59,5 @@ features = ["all"]
 
 [patch.crates-io]
 commit_verify = { git = "https://github.com/LNP-BP/client_side_validation", branch = "v0.12" }
+sonic = { git = "https://github.com/AluVM/sonic" }
 ultrasonic = { git = "https://github.com/AluVM/ultrasonic" }

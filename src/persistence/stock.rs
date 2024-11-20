@@ -24,11 +24,10 @@
 use core::iter;
 
 use amplify::confinement::TinyOrdMap;
-use ultrasonic::{CellAddr, Codex, Operation, Opid};
+use sonic::{ApiId, Contract, ContractMeta, DataCell, MethodName, StateName, StructData};
+use ultrasonic::{CellAddr, Codex, Operation, Opid, ProofOfPubl};
 
 use super::{Repo, RepoProvider, Stash, StashProvider, State, StateProvider, Trace, TraceProvider};
-use crate::api::{ApiId, DataCell, MethodName, StateName, StructData};
-use crate::containers::{Contract, ContractMeta, ProofOfPubl};
 
 pub struct ValidStash<H: StashProvider>(Stash<H>);
 

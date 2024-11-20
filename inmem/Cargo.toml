@@ -18,11 +18,21 @@ amplify.workspace = true
 strict_encoding.workspace = true
 strict_types = { workspace = true, optional = true }
 ultrasonic.workspace = true
+sonic.workspace = true
 sonare = { version = "0.12.0-alpha.1", path = ".." }
 serde = { workspace = true, optional = true }
 
 [features]
 default = ["std"]
-all = ["std"]
+all = ["std", "stl", "serde"]
 
 std = []
+
+stl = ["sonic/stl", "strict_types/armor"]
+serde = [
+    "dep:serde",
+    "amplify/serde",
+    "strict_encoding/serde",
+    "ultrasonic/serde",
+    "sonic/serde",
+]

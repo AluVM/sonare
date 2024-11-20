@@ -61,6 +61,7 @@ SONARE is a part of a larger ecosystem used to build safe distributed software, 
   uses a zk-STARK-compatible subset of its instruction set architecture (called zk-AluVM);
 - [UltraSONIC]: a transactional execution layer with capability-based memory access on top of
   zk-AluVM;
+- [SONIC]: toolchain for building SONIC contracts;
 - [Cation]: a general-purpose high-level programming language made with category theory, which
   features strict types, termination analysis and can be formally verified;
 - [Contractum]: a domain-specific version of Cation for writing programs for SONARE.

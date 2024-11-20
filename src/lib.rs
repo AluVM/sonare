@@ -32,19 +32,7 @@ extern crate alloc;
 
 #[macro_use]
 extern crate amplify;
-#[macro_use]
-extern crate strict_encoding;
-#[macro_use]
-extern crate commit_verify;
 
-#[cfg(feature = "serde")]
-#[macro_use]
-extern crate serde;
-
+pub use sonic::*;
 pub use ultrasonic as base;
-pub mod api;
 pub mod persistence;
-pub mod containers;
-pub mod util;
-
-pub const LIB_NAME_SONARE: &str = "SONARE";
